@@ -21,3 +21,36 @@ const buscarEmprestimosPorID = (req, res) => {
         res.status(404).send('Esse emprestimo não existe!')
     }
 }
+
+//post
+const adicionarEmprestimo = (req, res) => {
+    const { id, dataEmprestimo, dataDevolucao, livro, leitor } = req.body
+
+    if (!id || !dataEmprestimo || !dataDevolucao || !livro || !leitor) {
+        res.status(422).json({
+            error: true,
+            message: "Dados Inválidos!"
+        })
+        return
+    }
+
+    const emprestimo = {
+        id, dataEmprestimo, dataDevolucao, livro, leitor, devolvido: false
+    }
+
+    emprestimos.push(emprestimo)
+
+    if (emprestimo) {
+        res.status(201).json({
+            error: false,
+            message: "Emprestimo Adicionado!",
+            emprestimo: emprestimo
+        })
+    } else {
+        res.status(422).json({
+            error: true,
+            message: "Dados Inválidos!"
+        })
+    }
+
+}
