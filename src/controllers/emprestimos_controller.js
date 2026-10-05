@@ -54,3 +54,26 @@ const adicionarEmprestimo = (req, res) => {
     }
 
 }
+
+//devolver
+const devolverEmprestimo = (req, res) => {
+
+    const { id } = req.params
+    const idNumber = parseInt(id)
+    const emprestimo = emprestimos.find((emprestimo) => emprestimo.id === idNumber)
+
+    if (emprestimo) {
+        emprestimo.devolvido = true
+        res.json({
+            error: false,
+            message: "Emprestimo devolvido!"
+        })
+    } else {
+        res.status(404).json({
+            error: true,
+            message: "Emprestimo não encontrado!"
+        })
+    }
+}
+
+export { buscarEmprestimos, buscarEmprestimosPorID, adicionarEmprestimo, devolverEmprestimo, emprestimos }
