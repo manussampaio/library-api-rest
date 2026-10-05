@@ -22,6 +22,15 @@ const buscarEmprestimosPorID = (req, res) => {
     }
 }
 
+const buscarEmprestimosPorLeitor = (req, res) => {
+    const idLeitor = req.params.id
+    const idLeitorNumber = parseInt(idLeitor)
+    const emprestimosLeitor = emprestimos.filter((emprestimo) => emprestimo.leitor === idLeitorNumber)
+
+    console.log('Buscando Emprestimos por Leitor...')
+    res.json(emprestimosLeitor)
+}
+
 //post
 const adicionarEmprestimo = (req, res) => {
     const { id, dataEmprestimo, dataDevolucao, livro, leitor } = req.body
@@ -76,4 +85,4 @@ const devolverEmprestimo = (req, res) => {
     }
 }
 
-export { buscarEmprestimos, buscarEmprestimosPorID, adicionarEmprestimo, devolverEmprestimo, emprestimos }
+export { buscarEmprestimos, buscarEmprestimosPorID, buscarEmprestimosPorLeitor, adicionarEmprestimo, devolverEmprestimo, emprestimos }
