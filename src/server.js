@@ -1,7 +1,7 @@
 import express from 'express';
-import { livrosRouter } from "./routes/livros_router.js";
-import { leitoresRouter } from "./routes/leitores_router.js";
-import { emprestimosRouter } from "./routes/emprestimo_router.js";
+import { livrosRouter } from "./routes/livros_routes.js";
+import { leitoresRouter } from "./routes/leitores_routes.js";
+import { emprestimosRouter } from "./routes/emprestimos_routes.js";
 
 const app = express();
 
