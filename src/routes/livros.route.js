@@ -1,5 +1,11 @@
 import { Router } from "express";
-import { buscarLivro, buscarLivroPorID, adicionarLivro, atualizarLivro, deletarLivro } from "../controllers/livros_controller.js";
+import {
+  buscarLivro,
+  buscarLivroPorID,
+  adicionarLivro,
+  atualizarLivro,
+  deletarLivro,
+} from "../controllers/livros.controller.js";
 const livrosRouter = Router();
 
 livrosRouter.get("/livros", buscarLivro);
@@ -8,5 +14,4 @@ livrosRouter.post("/livros", adicionarLivro);
 livrosRouter.put("/livros/:id", atualizarLivro);
 livrosRouter.delete("/livros/:id", deletarLivro);
 
-
-export { livrosRouter }
+export { livrosRouter };

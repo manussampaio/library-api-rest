@@ -5,12 +5,12 @@ import {
   buscarEmprestimosPorLeitor,
   adicionarEmprestimo,
   devolverEmprestimo,
-} from "../controllers/emprestimos_controller.js";
+} from "../controllers/emprestimos.controller.js";
 import {
   verificarAtraso,
   verificarQuantidadeEmprestimos,
-  verificarExemplarDisponivel,
-} from "../middlewares.js";
+} from "../middlewares/middlewares.js";
+import { verificarExemplarDisponivel } from "../middlewares/middleware.livros.js";
 
 const emprestimosRouter = Router();
 
