@@ -5,7 +5,7 @@ import {
   adicionarLeitores,
   atualizarLeitores,
   deletarLeitor,
-} from "../controllers/leitores_controller.js";
+} from "../controllers/leitores.controller.js";
 const leitoresRouter = Router();
 
 leitoresRouter.get("/leitores", buscarLeitores);
