@@ -1,24 +1,30 @@
 {
-  "name": "library-api-rest",
+  "name": "library-db",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": " node --watch ./src/server.js"
+    "db:up": "docker start library-db || docker run -d --name library-db -p 127.0.0.1:27017:27017 -v library-db-data:/data/db mongo:8",
+    "db:down": "docker stop library-db",
+    "db:logs": "docker logs -f library-db",
+    "db:reset": "docker rm -f library-db; docker volume rm library-db-data",
+    "predev": "npm run db:up",
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manussampaio/library-api-rest.git"
+    "url": "git+https://github.com/manussampaio/library-db.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/manussampaio/library-api-rest/issues"
+    "url": "https://github.com/manussampaio/library-db/issues"
   },
-  "homepage": "https://github.com/manussampaio/library-api-rest#readme",
+  "homepage": "https://github.com/manussampaio/library-db#readme",
   "dependencies": {
     "express": "^5.2.1"
   }
