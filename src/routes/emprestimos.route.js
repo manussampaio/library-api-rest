@@ -9,7 +9,7 @@ import {
 import {
   verificarAtraso,
   verificarQuantidadeEmprestimos,
-} from "../middlewares/middlewares.js";
+} from "../middlewares/middleware.emprestimo.js";
 import { verificarExemplarDisponivel } from "../middlewares/middleware.livros.js";
 
 const emprestimosRouter = Router();
