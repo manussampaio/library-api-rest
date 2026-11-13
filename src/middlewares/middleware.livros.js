@@ -1,4 +1,5 @@
-import { livros } from "./controllers/livros_controller.js";
+import { livros } from "../controllers/livros.controller.js";
+import { emprestimos } from "../controllers/emprestimos.controller.js";
 
 function verificarExemplarDisponivel(req, res, next) {
   const { livro } = req.body;

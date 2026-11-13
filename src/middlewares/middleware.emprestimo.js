@@ -1,4 +1,4 @@
-import { emprestimos } from "./controllers/emprestimos_controller.js";
+import { emprestimos } from "../controllers/emprestimos.controller.js";
 
 function verificarAtraso(req, res, next) {
   const leitor = req.body.leitor;
