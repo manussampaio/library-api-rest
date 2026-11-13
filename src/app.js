@@ -1,6 +1,7 @@
 import { livrosRouter } from "./routes/livros.route.js";
 import { leitoresRouter } from "./routes/leitores.route.js";
 import { emprestimosRouter } from "./routes/emprestimos.route.js";
+import express from "express";
 
 const app = express();
 
